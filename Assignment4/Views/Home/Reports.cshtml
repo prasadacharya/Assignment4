@@ -1,0 +1,49 @@
+﻿@model Assignment4.Models.Reports
+@{
+    ViewData["Title"] = "Reports";
+}
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div style="text-align:center">
+        <b>Reports are displayed in the table below</b>
+        </div>
+        <div>
+            <br /> <br />
+
+            <table class="MyTable">
+                <tr>
+                    <th>Report Id </th>
+                    <th>Report Name </th>
+                    <th>Description Name </th>
+
+                </tr>
+                </div>
+                @foreach (var item in Model.data)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.id)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.desc)
+                        </td>
+                    </tr>
+                }
+            </table>
+
+            <br /> <br />
+            <script>
+    alertDbSave(@ViewBag.dbSuccessComp);
+            </script>
+</body>
+
