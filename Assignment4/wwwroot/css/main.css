@@ -1,0 +1,320 @@
+/**
+Sample css code
+*/
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+body,
+html {
+  height: 100%;
+}
+
+/*Set background image*/
+.container {
+  background-image: url('https://doc-10-ao-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/r085o9ungppbiokopob2sfbekae4uqbb/1537920000000/14802840322886517493/*/110cT8sl-pOiHGgj9yToPkAqAzrr-RNfb');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Position text in the middle */
+.middle {
+  position: absolute;
+  color: beige;
+  top: 70%;
+  left: 39%;
+  text-align: center;
+  font-size: 25px;
+}
+
+/*Set circle in unordered list*/
+.middle ul {
+  list-style-type: circle;
+}
+
+/*Set text inside li tag to left*/
+.middle ul li {
+  text-align: left !important;
+}
+
+/*Set text color for a tag inside middle class and ul>li element*/
+.middle ul li a {
+  color: beige;
+}
+
+/*Change text color and decoration for a tags inside middle class and ul>li element*/
+.middle ul li a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+
+
+
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/*template css*/
+/* A Free Design by Bryant Smith (bryantsmith.com) */
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font: 12px Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #061C37;
+    background: #EEEFE4;
+    background-image: url(../img/headerbg.jpg);
+    background-repeat: repeat-x;
+}
+
+* {
+    margin: 0 auto 0 auto;
+    text-align: left;
+}
+
+#container {
+    display: block;
+    height: auto;
+    position: relative;
+    width: 940px;
+}
+
+#mainpic h1 {
+    position: absolute;
+    text-align: right;
+    color: #F8FDEE;
+    font-size: 30px;
+    color: #FFF;
+    left: 60px;
+    top: 20px;
+}
+
+
+#mainpic h2 {
+    position: absolute;
+    text-align: right;
+    color: #E1E7F7;
+    left: 60px;
+    top: 50px;
+}
+
+#mainpic {
+    background-image: url(../img/bgfarmlabor.jpg);
+    width: 100%;
+    height: 254px;
+}
+
+
+.off {
+    color: #3A6028;
+}
+
+#menu {
+    background-image: url(../img/menu.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 7%;
+    float: left;
+    clear: both;
+}
+
+#content {
+    width: 100%;
+    height: auto;
+    background-color: #FFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    margin-top: 70px;
+}
+
+#footer {
+    width: inherit;
+    height: auto;
+}
+
+    #footer h3 a, #footer h3 a:visited {
+        display: inline;
+        text-align: center;
+        font-size: 12px;
+        text-decoration: none;
+        color: #7198E1;
+    }
+
+
+#menu ul {
+    list-style: none;
+    padding: 0px;
+    margin-left: auto;
+    width: 900px;
+}
+
+#menu li {
+    list-style: none;
+    padding: 0px;
+    display: inline;
+}
+
+#menu a {
+    float: left;
+    width: 25%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 100%;
+}
+
+    #menu a:hover {
+        color: #BEE399;
+    }
+
+#content p {
+}
+
+
+html, body {
+    text-align: center;
+}
+
+p {
+    text-align: left;
+}
+/*Slider quick fix*/
+.initslider {
+    display: block;
+}
+
+/*Table css*/
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.table-title {
+    padding: 20px 10px 10px 10px;
+    text-align: center;
+}
+
+/*about us*/
+.abtus h1 {
+    text-align: center;
+    padding: 15px;
+}
+
+.member {
+    display: inline-block;
+    width: 33%;
+    padding: 2%;
+    text-align: center;
+}
+
+.member-name {
+    text-align: center;
+}
+
+.member-desc {
+    text-align: justify;
+    font-size:120%;
+}

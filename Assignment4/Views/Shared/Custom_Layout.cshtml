@@ -1,0 +1,35 @@
+﻿
+
+@{
+    ViewData["Title"] = "CustomLayout";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @* <title>@ViewData["Title"] - AgriculturalReport</title>*@
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/main.css" />
+</head>
+
+
+
+<div>
+    <main>
+        @RenderBody()
+    </main>
+</div>
+
+
+<br />
+<br />
+<br />
+
+<footer class="ftr">
+    <div class="ftrtxt" style="text-align:center">
+        <p>
+            &copy; 2020 - AgriculturalReport
+        </p>
+    </div>
+</footer>
+

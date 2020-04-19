@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
+<!--
 <body>
     <h2 style="text-align:center;">
         Agricultural Resource Management System
@@ -23,5 +24,82 @@
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
-        </div>
+    </div>
 </body>
+    -->
+
+<!--Your HTML code here-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>Agriculture Reports</title>
+    <link rel="stylesheet" href="~/css/main.css">
+    <script src="~/js/main.js"></script>
+</head>
+<body>
+
+    <div id="container">
+        <div id="mainpic">
+            <div>
+                <h1>Agriculture<span class="off">Reports</span></h1>
+               <!-- <h2>States and Categories</h2> -->
+            </div>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Categories">Category</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Reports">Report</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="States">States</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
+
+
+            </ul>
+        </div>
+
+        <div id="content">
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade initslider">
+                    <img src="~/img/Farm.png" style="width:100%">
+                    <div class="text">Farm</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="~/img/Labor.png" style="width:100%">
+                    <div class="text">Labor</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="~/img/poultry.jpg" style="width:100%">
+                    <div class="text">Poultry</div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+</body>
+</html>

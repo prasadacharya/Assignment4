@@ -37,10 +37,10 @@ namespace Assignment4.Controllers
             Reports reports = webHandler.GetReports();
             return View(reports);
         }
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
-        }
+        } 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
