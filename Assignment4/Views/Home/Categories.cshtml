@@ -9,41 +9,63 @@
     <title>Categories</title>
 </head>
 <body>
-    <div style="text-align:center">
-        <b>Categories are displayed in the table below</b>
-    </div>
-    <br /> <br />
 
-    <table class="MyTable">
-        <tr>
-            <th>Category Sequence </th>
-            <th>Category ID </th>
-            <th>Category Name </th>
-            <th>Category Description </th>
-        </tr>
-        @foreach (var item in Model.data)
-        {
+    <div id="container">
+        <div id="mainpic">
+            <div>
+                <h1>Agriculture<span class="off">Reports</span></h1>
+                <!-- <h2>States and Categories</h2> -->
+            </div>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Categories">Category</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Reports">Report</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="States">States</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Chart">Chart</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
+
+
+            </ul>
+        </div>
+        <div style="text-align:center">
+            <b>Categories are displayed in the table below</b>
+        </div>
+        <br /> <br />
+
+        <table class="MyTable">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.sequence)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.description)
-                </td>
+                <th>Category Sequence </th>
+                <th>Category ID </th>
+                <th>Category Name </th>
+                <th>Category Description </th>
             </tr>
-        }
+            @foreach (var item in Model.data)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sequence)
+                    </td>
 
-    </table>
-    <br />
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.description)
+                    </td>
+                </tr>
+            }
 
-    <br />
+        </table>
+        <br />
+
+        <br />
+    </div>
 </body>
 
 <script>

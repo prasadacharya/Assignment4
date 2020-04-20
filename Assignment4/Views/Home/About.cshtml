@@ -3,7 +3,7 @@
     ViewData["Title"] = "About";
 }
 
-<h1>About</h1>
+<!--<h1>About</h1>-->
 
 <html>
 <head>
@@ -15,16 +15,21 @@
 
     <div id="container">
         <div id="mainpic">
-            <h1>Agriculture<span class="off">Expenses</span></h1>
-            <h2>Farm and Labor</h2>
+            <div>
+                <h1>Agriculture<span class="off">Reports</span></h1>
+                <!-- <h2>States and Categories</h2> -->
+            </div>
         </div>
 
         <div id="menu">
             <ul>
-                <li class="menuitem"><a href="index.html">Home</a></li>
-                <li class="menuitem"><a href="Farm.html">Farm Expenses</a></li>
-                <li class="menuitem"><a href="Labor.html">Labor Expenses</a></li>
-                <li class="menuitem"><a href="About.html">About us</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Categories">Category</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Reports">Report</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="States">States</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Chart">Chart</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
+
 
             </ul>
         </div>
@@ -40,7 +45,7 @@
 
             <div>
                 <div class="member">
-                    <img style="width:250px;height:250px;" src="Prasad.jpg">
+                    <img style="width:250px;height:250px;" src="~/img/Prasad.jpg">
                     <h3 class="member-name"><br />Prasad Acharya</h3>
                     <p class="member-desc">
                         <br /> Has 9 years of work experience in the field of Information Technology as a Programmer Analyst.
@@ -49,7 +54,7 @@
                     </p>
                 </div>
                 <div class="member">
-                    <img style="width:250px;height:250px;" src="Nikhitha.png">
+                    <img style="width:250px;height:250px;" src="~/img/Nikhitha.png">
                     <h3 class="member-name"><br />Nikhitha Sama</h3>
                     <p class="member-desc">
                         <br />Has 4 years of work experience in the field of Information Technology as a System Engineer.
@@ -58,7 +63,7 @@
                     </p>
                 </div>
                 <div class="member">
-                    <img style="width:250px;height:250px;" src="Apeksha.png">
+                    <img style="width:250px;height:250px;" src="~/img/Apeksha.png">
                     <h3 class="member-name"><br />Apeksha Bhise</h3>
                     <p class="member-desc">
                         <br />Has 4 years of work experience in the field of Operations and Services as a Business Analyst.

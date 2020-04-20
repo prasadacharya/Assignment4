@@ -13,15 +13,31 @@
     <title> States </title>
 </head>
 <body>
+    <div id="container">
+        <div id="mainpic">
+            <div>
+                <h1>Agriculture<span class="off">Reports</span></h1>
+                <!-- <h2>States and Categories</h2> -->
+            </div>
+        </div>
 
-    
-    <h2 style="text-align:center; font-family:sans-serif;">
-        Agricultural Resource Management System
-    </h2>
-    
-    <div>
-        <h2>States</h2>
-</div>
+        <div id="menu">
+            <ul>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Categories">Category</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Reports">Report</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="States">States</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Chart">Chart</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
+
+
+            </ul>
+        </div>
+
+        <div style="text-align:center">
+            <!--<h2>States</h2>-->
+            <b>States are displayed in the table below</b>
+        </div>
         <div>
 
             <p>
@@ -30,8 +46,8 @@
                 farms by region (or by State in the case of 15 heavily sampled States), farm sales category,
                 and commodity specialization.
             </p>
-           
-            
+
+
             <table class="MyTable">
                 <tr>
                     <th>State Id </th>
@@ -63,8 +79,9 @@
             <br /><br />
 
             <script>
-    alertDbSave(@ViewBag.dbSuccessComp);
+                alertDbSave(@ViewBag.dbSuccessComp);
             </script>
-            
-          </div>
+
+        </div>
+    </div>
 </body>
