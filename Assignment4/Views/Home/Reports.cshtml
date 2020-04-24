@@ -37,14 +37,27 @@
         <div>
             <br /> <br />
 
-            <table class="MyTable">
-                <tr>
-                    <th>Report Id </th>
-                    <th>Report Name </th>
-                    <th>Description Name </th>
+            @using (Html.BeginForm("SurveyData", "Home", FormMethod.Post))
+            {
 
-                </tr>
-        </div>
+                <label for="text">Report type:</label>
+                <input type="text" class="form-control" id="text" name="test" style="width:auto; border-radius:12px; height:30px; align-content:center">
+                <br />
+                <div>
+
+                    <input type="submit" class="MyButton" value="Get Survey Data">
+
+                </div>
+            }
+
+                <table class="MyTable">
+                    <tr>
+                        <th>Report Id </th>
+                        <th>Report Name </th>
+                        <th>Description Name </th>
+
+                    </tr>
+            </div>
         @foreach (var item in Model.data)
         {
             <tr>
@@ -57,7 +70,7 @@
                 </td>
                 <td>
 
-                    @Html.DisplayFor(modelItem => item.desc)
+                   @Html.DisplayFor(modelItem => item.desc)
                 </td>
             </tr>
         }
