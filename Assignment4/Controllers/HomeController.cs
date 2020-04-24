@@ -31,6 +31,14 @@ namespace Assignment4.Controllers
             
             return View(categories); 
         }
+
+        public IActionResult SurveyDatas()
+        {
+            APIHandler webHandler = new APIHandler();
+            SurveyDatas surveydatas = webHandler.GetSurveyDatas();
+
+            return View(surveydatas);
+        }
         public IActionResult Reports()
         {
             APIHandler webHandler = new APIHandler();

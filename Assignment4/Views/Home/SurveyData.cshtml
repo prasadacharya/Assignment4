@@ -1,7 +1,9 @@
-﻿@model Assignment4.Models.States
+﻿@model Assignment4.Models.SurveyDatas
 @{
-    ViewData["Title"] = "States";
+    ViewData["Title"] = "SurveyData";
 }
+
+<h1>SurveyData</h1>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale = 1" />
@@ -10,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
     <script src="~/js/Custom.js"></script>
     @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
-    <title> States </title>
+    <title> Survey Data </title>
 </head>
 <body>
     <div id="container">
@@ -27,7 +29,7 @@
                 <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Categories">Category</a></li>
                 <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Reports">Report</a></li>
                 <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="States">States</a></li>
-                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Chart">Chart</a></li>             
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Chart">Chart</a></li>
                 <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
 
 
@@ -36,7 +38,7 @@
 
         <div style="text-align:center">
             <!--<h2>States</h2>-->
-            <b>States are displayed in the table below</b>
+            <b>Survey Data is shown below</b>
         </div>
         <div>
 
@@ -50,9 +52,14 @@
 
             <table class="MyTable">
                 <tr>
-                    <th>State Id </th>
-                    <th>State Code </th>
-                    <th>State Name </th>
+                    <th>Year </th>
+                    <th>State ID </th>
+                    <th>Category Name </th>
+                    <th>Farm Type</th>
+                    <th>Report</th>
+                    <th>Variable Name</th>
+                    <th>Estimate</th>
+                    <th>Median</th>
 
                 </tr>
 
@@ -60,15 +67,18 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.id)
+                            @Html.DisplayFor(modelItem => item.year)
                         </td>
 
                         <td>
-                            @Html.DisplayFor(modelItem => item.code)
+                            @Html.DisplayFor(modelItem => item.id)
                         </td>
                         <td>
 
                             @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem =>item.farmtype)
                         </td>
                     </tr>
                 }
