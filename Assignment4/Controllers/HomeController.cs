@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Assignment4.Models;
 using Assignment4.APIHandlerManager;
 using Newtonsoft.Json;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Assignment4.Controllers
 {
@@ -48,7 +48,21 @@ namespace Assignment4.Controllers
         public IActionResult About()
         {
             return View();
-        } 
+        }
+
+        public IActionResult Chart()
+        {
+            APIHandler webHandler = new APIHandler();
+            ViewBag.dbSuccessChart = 0;
+            SurveyDatas surveydatas = null;
+            
+            return View("Charts", surveydatas);
+        }
+
+        private SurveyDatas GetSurveyData(string report)
+        {
+            throw new NotImplementedException();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

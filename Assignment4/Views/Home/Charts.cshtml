@@ -1,0 +1,76 @@
+﻿@model Assignment4.Models.SurveyDatas
+@{
+    ViewData["Title"] = "Charts";
+}
+
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <script src="MyJavascript.js"></script>
+        <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+        <meta charset="utf-8" />
+        <script src="~/js/Chart.js"></script>
+
+        <title>Statistics Charts</title>
+    </head>
+                <body>
+
+                    <div id="container">
+                        <div id="mainpic">
+                            <div>
+                                <h1>Agriculture<span class="off">Reports</span></h1>
+                                <!-- <h2>States and Categories</h2> -->
+                    </div>
+                        </div>
+
+                        <div id="menu">
+                            <ul>
+                                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Categories">Category</a></li>
+                                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Reports">Report</a></li>
+                                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="States">States</a></li>
+                                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Chart">Chart</a></li>
+                                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
+
+
+                            </ul>
+                        </div>
+
+                        <div style="text-align:center">
+                            <!--<h2>States</h2>-->
+                <b>The chart shows the distribution of farm types based on their categories.</b>
+                        </div>
+                        <div style="text-align:center">
+                            <!--<h2>States</h2>-->
+                <p>
+                                <b> The data is for the year 2018, covers the survey data for all 50 states of United States.</b>
+
+                            </p>
+                        </div>
+
+                        <br /> <br />
+
+                        <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+                            <body>
+                                <canvas id="line-chart" width="750" height="550"></canvas>
+                                <script>
+                                    new Chart(document.getElementById("line-chart"), {
+                                        type: 'line',
+                        data: {
+                                        labels: ["All Farms", "Collapsed Farm Typology", "Economic Class", "Farm Resource Region",
+                                        "Farm Typology", "NASS Region", "Operator Age", "Production Specialty"],
+
+                            datasets: [{
+                                        data: [501, 43776, 102531, 54609, 112224, 31563, 67635, 6012],
+
+
+                                    fill: true,
+                                    showInLegend: true,
+                                legendText: "{indexLabel}",
+                                }]
+                            }
+            
+        </script>
+        </body>
+        </html>
+        </div>
+        </body>
