@@ -4,7 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Assignment4.Models;
-
+using Microsoft.AspNetCore.Mvc;
+using Assignment4.Controllers;
 
 namespace Assignment4.APIHandlerManager
 {
@@ -14,7 +15,6 @@ namespace Assignment4.APIHandlerManager
         static string API_KEY = "v1iOVsEQOaQ5p77kQeMgB3L21otYsBewIypJNVEx";
        
         HttpClient httpClient;
-
 
         public APIHandler()
         {

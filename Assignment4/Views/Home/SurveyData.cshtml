@@ -33,6 +33,14 @@
 
             </ul>
         </div>
+        @using (Html.BeginForm("SurveyData", "Home", FormMethod.Post))
+        {
+            <div style="text-align:center; margin-top:20px;">                
+                <label for="text">Select Report Name from list:</label>
+                @Html.DropDownList("reportName", new SelectList(ViewBag.Reports.data, "name", "name"))
+                <input type="submit" class="MyButton" value="Get Survey Data">
+            </div>
+        }
 
         <div style="text-align:center">
             <!--<h2>States</h2>-->
@@ -40,12 +48,7 @@
         </div>
         <div>
             <br /> <br />
-            <p>
-
-                ARMS Survey Design followed stratified sampling design. States are divisions within the sample frames that group
-                farms by region (or by State in the case of 15 heavily sampled States), farm sales category,
-                and commodity specialization.
-            </p>
+            
 
 
             <table class="MyTable">
@@ -91,6 +94,12 @@
 
             </table>
 
+            @if (Model.data.Count == 0)
+            {
+            <div style="text-align:center; color:red;" >
+                <h3>No data available from API for this report. Please select another report</h3>
+            </div>
+            }
 
             <br /><br />
 

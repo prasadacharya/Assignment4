@@ -38,42 +38,19 @@
             <br /> <br />
 
             @using (Html.BeginForm("SurveyData", "Home", FormMethod.Post))
-            {
-                <label for="text">Enter Report Name from below list:</label>
-                <input type="text" class="form-control" id="text" name="reportName" style="width:auto; border-radius:12px; height:30px; align-content:center">
-                <br />
+            {             
                 <div>
-
+                    <label for="text">Select Report Name from list:</label>
+                    @Html.DropDownList("reportName", new SelectList(Model.data, "name", "name"))
                     <input type="submit" class="MyButton" value="Get Survey Data">
-
                 </div>
             }
 
-            <table class="MyTable">
-                <tr>
-                    <th>Report Id </th>
-                    <th>Report Name </th>                    
-                </tr>
         </div>
-        @foreach (var item in Model.data)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.id)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.name)
-                </td>
-
-            </tr>
-        }
-        </table>
-
-        <br /> <br />
-        <script>
+            <br /> <br />
+            <script>
             alertDbSave(@ViewBag.dbSuccessComp);
-        </script>
-    </div>
+            </script>
+        </div>
 </body>
 

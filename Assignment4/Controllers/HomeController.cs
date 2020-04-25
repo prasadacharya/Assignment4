@@ -8,11 +8,19 @@ using Assignment4.Models;
 using Assignment4.APIHandlerManager;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
+using Assignment4.DataAccess;
 
 namespace Assignment4.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext dbContext;
+
+        public HomeController(ApplicationDbContext context)
+        {
+            dbContext = context;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -36,7 +44,7 @@ namespace Assignment4.Controllers
         {
             APIHandler webHandler = new APIHandler();
             SurveyDatas surveydatas = webHandler.GetSurveyDatas(reportName);
-
+            ViewBag.Reports = new APIHandler().GetReports();
             return View(surveydatas);
         }
         public IActionResult Reports()
@@ -69,5 +77,44 @@ namespace Assignment4.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        /* Below method will save states to Database if count == 0 */
+        public IActionResult SaveStates()
+        {
+            APIHandler apiHandler = new APIHandler();
+            States state = apiHandler.GetStates();
+            List<State> cd = state.data;
+            foreach (State cd1 in cd)
+            {
+                if (dbContext.State.Where(c => c.id.Equals(cd1.id)).Count() == 0)
+                {
+                    dbContext.State.Add(cd1);
+                    ViewBag.Message = "Database Updated";
+                }
+            }
+            dbContext.SaveChanges();
+            ViewBag.dbSuccessComp = 1;
+            return View("States", state);
+        }
+
+        /* Below method will save Categories to Database if count == 0 */
+        public IActionResult SaveCategories()
+        {
+            APIHandler apiHandler = new APIHandler();
+            Categories category = apiHandler.GetCategories();
+            List<Category> cd = category.data;
+            foreach (Category cd1 in cd)
+            {
+                if (dbContext.Category.Where(c => c.id.Equals(cd1.id)).Count() == 0)
+                {
+                    dbContext.Category.Add(cd1);
+                    ViewBag.Message = "Database Updated";
+                }
+            }
+            dbContext.SaveChanges();
+            ViewBag.dbSuccessComp = 1;
+            return View("Categories", category);
+        }
+
     }
 }
