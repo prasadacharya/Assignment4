@@ -32,10 +32,10 @@ namespace Assignment4.Controllers
             return View(categories); 
         }
 
-        public IActionResult SurveyDatas()
+        public IActionResult SurveyData(string reportName)
         {
             APIHandler webHandler = new APIHandler();
-            SurveyDatas surveydatas = webHandler.GetSurveyDatas();
+            SurveyDatas surveydatas = webHandler.GetSurveyDatas(reportName);
 
             return View(surveydatas);
         }

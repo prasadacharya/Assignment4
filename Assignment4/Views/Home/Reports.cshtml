@@ -12,17 +12,17 @@
     <div id="container">
         <div id="mainpic">
             <div>
-                <h1>Agriculture<span class="off">Reports</span></h1>
-                <!-- <h2>States and Categories</h2> -->
+                <h1>Agriculture<span class="off">Survey Data</span></h1>
+                <h2>2018</h2> 
             </div>
         </div>
 
         <div id="menu">
             <ul>
                 <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Categories">Category</a></li>
-                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Reports">Report</a></li>
                 <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="States">States</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Categories">Category</a></li>
+                <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Reports">Survey Data</a></li>
                 <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="Chart">Chart</a></li>
                 <li class="menuitem"><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
 
@@ -32,16 +32,15 @@
         
         <div style="text-align:center">
             
-            <b>Reports are displayed in the table below</b>
+            <b>Survey Data will be displayed below based on Report Name</b>
         </div>
         <div>
             <br /> <br />
 
             @using (Html.BeginForm("SurveyData", "Home", FormMethod.Post))
             {
-
-                <label for="text">Report type:</label>
-                <input type="text" class="form-control" id="text" name="test" style="width:auto; border-radius:12px; height:30px; align-content:center">
+                <label for="text">Enter Report Name from below list:</label>
+                <input type="text" class="form-control" id="text" name="reportName" style="width:auto; border-radius:12px; height:30px; align-content:center">
                 <br />
                 <div>
 
@@ -50,14 +49,12 @@
                 </div>
             }
 
-                <table class="MyTable">
-                    <tr>
-                        <th>Report Id </th>
-                        <th>Report Name </th>
-                        <th>Description Name </th>
-
-                    </tr>
-            </div>
+            <table class="MyTable">
+                <tr>
+                    <th>Report Id </th>
+                    <th>Report Name </th>                    
+                </tr>
+        </div>
         @foreach (var item in Model.data)
         {
             <tr>
@@ -68,10 +65,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.name)
                 </td>
-                <td>
 
-                   @Html.DisplayFor(modelItem => item.desc)
-                </td>
             </tr>
         }
         </table>

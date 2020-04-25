@@ -60,21 +60,28 @@ namespace Assignment4.APIHandlerManager
             return states;
         }
 
-        public SurveyDatas GetSurveyDatas()
+        public SurveyDatas GetSurveyDatas(string reportName)
         {
             //  string NATIONAL_PARK_API_PATH = BASE_URL + "/parks?limit=20";
-            string STATE_API_PATH = BASE_URL + "/state?";
+            string API_PATH = BASE_URL + "/surveydata?";
             string surveydataData = "";
+            string[] words = reportName.Split(' ');
+            String report = "";
+            foreach (String word in words)
+            {
+                report = report + "+" + word;
+            }
 
             SurveyDatas surveydatas = null;
 
-            httpClient.BaseAddress = new Uri(STATE_API_PATH);
+            API_PATH = API_PATH + "year=2018&report=" + report + "&";
+            httpClient.BaseAddress = new Uri(API_PATH);
 
             // It can take a few requests to get back a prompt response, if the API has not received
             //  calls in the recent past and the server has put the service on hibernation
             try
             {
-                HttpResponseMessage response = httpClient.GetAsync(STATE_API_PATH).GetAwaiter().GetResult();
+                HttpResponseMessage response = httpClient.GetAsync(API_PATH).GetAwaiter().GetResult();
                 if (response.IsSuccessStatusCode)
                 {
                     surveydataData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();

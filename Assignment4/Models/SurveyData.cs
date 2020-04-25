@@ -9,13 +9,12 @@ namespace Assignment4.Models
     public class SurveyData
     {
         public int year { get; set; }
-        public string id { get; set; }
-        public string name { get; set; }
+        public string state { get; set; }
+        public string category { get; set; }
         public string farmtype { get; set; }
-        public string Report { get; set; }
-        public string variablename { get; set; }
+        public string report { get; set; }
+        public string variable_name { get; set; }
         public double estimate { get; set; }
-        public object median { get; set; }
 
     }
 
