@@ -5,12 +5,35 @@
 
     <head>
         <meta name="viewport" content="width=device-width" />
-        <script src="MyJavascript.js"></script>
-        <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
-        <meta charset="utf-8" />
-        <script src="~/js/Chart.js"></script>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawVisualization);
 
-        <title>Statistics Charts</title>
+                function drawVisualization() {                     
+                    var data = google.visualization.arrayToDataTable([
+                        ['Reports', 'AR', 'CA', 'FL', 'GA', 'TX'],
+                        ['Farm Business Income Statement ', 2165, 8938, 5282, 3998, 4150],
+                        ['Farm Business Financial Ratios', 1135, 6120, 9599, 6268, 3288],
+                        ['Farm Business Debt Repayment Capacity', 2157, 11167, 9587, 1807, 3297],
+                        ['Government Payments', 1139, 3110, 6215, 5968, 2115],
+                        ['Structural Characteristics', 3136, 10691, 2629, 4026, 3666]
+                    ]);
+
+                    var options = {
+                        title: '',
+                        vAxis: { title: 'Estimate' },
+                        hAxis: { title: 'Reports' },
+                        seriesType: 'bars',
+                        series: { 5: { type: 'line' } }
+                    };
+
+                    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+            </script>
+
+        <title>Chart</title>
     </head>
                 <body>
 
@@ -18,8 +41,8 @@
                         <div id="mainpic">
                             <div>
                                 <h1>Agriculture<span class="off">SurveyData</span></h1>
-                                <h2>2018</h2> 
-                    </div>
+                                <h2>2018</h2>
+                            </div>
                         </div>
 
                         <div id="menu">
@@ -34,43 +57,16 @@
 
                             </ul>
                         </div>
-
                         <div style="text-align:center">
-                            <!--<h2>States</h2>-->
-                <b>The chart shows the distribution of farm types based on their categories.</b>
+                            
+                            <b>Statewise estimates for various agriculture report </b>
                         </div>
-                        <div style="text-align:center">
-                            <!--<h2>States</h2>-->
-                <p>
-                                <b> The data is for the year 2018, covers the survey data for all 50 states of United States.</b>
+                        <div>
 
-                            </p>
+                            <br /> <br />
+
+                            <div id="chart_div" style="width: 900px; height: 500px;"></div>
                         </div>
-
-                        <br /> <br />
-
-                        <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-                            <body>
-                                <canvas id="line-chart" width="750" height="550"></canvas>
-                                <script>
-                                    new Chart(document.getElementById("line-chart"), {
-                                        type: 'line',
-                        data: {
-                                        labels: ["All Farms", "Collapsed Farm Typology", "Economic Class", "Farm Resource Region",
-                                        "Farm Typology", "NASS Region", "Operator Age", "Production Specialty"],
-
-                            datasets: [{
-                                        data: [501, 43776, 102531, 54609, 112224, 31563, 67635, 6012],
+</body>
 
 
-                                    fill: true,
-                                    showInLegend: true,
-                                legendText: "{indexLabel}",
-                                }]
-                            }
-            
-        </script>
-        </body>
-        </html>
-        </div>
-        </body>
